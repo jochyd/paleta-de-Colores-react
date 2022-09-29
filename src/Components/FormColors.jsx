@@ -11,6 +11,7 @@ const FormColors = () => {
 
   const [arregloColores, setArregloColores] = useState(coloresLocalStorage);
 
+  const  [cajitaColores, setCajitaColores] = useState("");
   
   useEffect(() => {
     localStorage.setItem("listaColores", JSON.stringify(arregloColores));
@@ -21,6 +22,16 @@ const FormColors = () => {
     setArregloColores([...arregloColores, color]);
     setColor("");
   };
+
+  const borrarColores = (borrar) =>{
+    let arregloModificado = arregloColores.filter((item)=> item !== borrar);
+    setArregloColores(arregloModificado);
+  }
+
+  const cambiarColor = (colorIngresado) =>{
+    setCajitaColores(colorIngresado);
+    setColor (colorIngresado);
+  }
 
   return (
     <>
@@ -33,12 +44,12 @@ const FormColors = () => {
           <Form.Group className="mb-3 d-flex" controlId="formColors">
             <div
               className="caja1"
-              style={{ backgroundColor: "lightblue" }}
+              style={{ 'background': cajitaColores }}
             ></div>
             <Form.Control
               type="text"
               placeholder="Ingresa Un Color en Ingles"
-              onChange={(e) => setColor(e.target.value)}
+              onChange={(e) => cambiarColor(e.target.value)}
               value={color}
             />
             <Button variant="primary" type="submit">
@@ -46,7 +57,7 @@ const FormColors = () => {
             </Button>
           </Form.Group>
         </Form>
-        <ItemCards></ItemCards>
+        <ItemCards arregloColores={arregloColores} borrarColores={borrarColores}></ItemCards>
       </Container>
     </>
   );

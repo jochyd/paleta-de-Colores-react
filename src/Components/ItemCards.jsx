@@ -1,17 +1,18 @@
 import { Card, Button, Row, Col } from "react-bootstrap";
+import Colores from "./Colores";
 
-const ItemCards = () => {
+const ItemCards = ({arregloColores, borrarColores}) => {
     return (
         <Row>
-        <Col className="text-center" md={3}>
-        <Card className="align-content-center p-3">
-        <Card.Img className="caja1" style={{backgroundColor: "lightblue"}}/>
-        <Card.Body>
-          <Card.Title className="fw-lighter">Nombre del color</Card.Title>
-        </Card.Body>
-          <Button variant="danger">Borrar</Button>
-      </Card>
-        </Col>
+            {arregloColores.map((color,posicion)=> 
+                    <Col className="text-center" md={3}>
+                <Card className="align-item-center p-3 mb-3">
+                <Colores key={posicion} color={color}></Colores>
+                  <Button variant="danger" onClick={()=> borrarColores(color)}>Borrar</Button>
+              </Card>
+                </Col> )
+            }
+       
         </Row>
     );
 };
