@@ -1,9 +1,10 @@
-import FormCard from "./Components/FormCard";
+import FormColors from "./Components/FormColors";
 
 function App() {
   return (
    <>
-    <FormCard></FormCard>
+    <FormColors></FormColors>
+ 
    </>
   );
 }
