@@ -4,7 +4,7 @@ Formulario realizado con React con un input y boton  que nos permite ingresar un
 
 ## Demo del proyecto
 
-Proba la demo de la lista de tareas del siguiente link: [Demo lista tareas](https://lista-tareas-jo.netlify.app/)
+Proba la demo de la lista de tareas del siguiente link: [Demo lista tareas](https://paleta-de-colores-react.netlify.app/)
 
 ## Pasos para probar el proyecto
 
