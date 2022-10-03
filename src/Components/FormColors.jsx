@@ -14,6 +14,7 @@ const FormColors = () => {
   const  [cajitaColores, setCajitaColores] = useState("");
   
   useEffect(() => {
+    console.log(color);
     localStorage.setItem("listaColores", JSON.stringify(arregloColores));
   }, [arregloColores]);
 
